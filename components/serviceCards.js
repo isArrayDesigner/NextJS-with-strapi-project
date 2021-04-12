@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import styles from '../styles/ServiceCards.module.css'
+import styles from "../styles/ServiceCards.module.css";
 import {
   Grid,
   Card,
@@ -14,7 +14,7 @@ const srvcCardStyles = makeStyles((theme) => ({
     backgroundColor: "transparent",
     color: "white",
     border: "1px solid white",
-    height: '85%',
+    height: "85%",
   },
   cardContainer: {
     marginTop: "3rem",
@@ -37,8 +37,8 @@ const srvcCardStyles = makeStyles((theme) => ({
     marginBottom: "1rem",
     textTransform: "uppercase",
   },
-  cardDescUl:{
-    paddingInlineStart: '0',
+  cardDescUl: {
+    paddingInlineStart: "0",
   },
   srvBtnMargin: {
     marginLeft: "auto",
@@ -46,9 +46,7 @@ const srvcCardStyles = makeStyles((theme) => ({
     marginTop: "3rem",
     marginBottom: "3rem",
   },
-
 }));
-
 
 const cardList = [
   {
@@ -107,24 +105,32 @@ const ServiceCards = () => {
       justify="center"
       alignItems="center"
       alignItems="stretch"
-      spacing={3}>
-      {cardList.map((card) => (
-        <Grid item xs={12} md >
-          <Box className={classes.cardImageDiv}>
+      spacing={3}
+      key={"srvceCardGridWrap"}>
+      {cardList.map((card, ind) => (
+        <Grid item xs={12} md key={"srvceCardGrid" + ind}>
+          <Box className={classes.cardImageDiv} key={"srvceCardBox" + ind}>
             <Avatar
               className={classes.cardImage}
               src={card.headImage.src}
-              alt={card.headImage.alt}></Avatar>
+              alt={card.headImage.alt}
+              key={"srvceCardAvatar" + ind}></Avatar>
           </Box>
-          <Card className={classes.card}>
-            <CardContent>
+          <Card className={classes.card} key={"srvceCardMain" + ind}>
+            <CardContent key={"srvceCardContent" + ind}>
               <Typography
                 align="center"
                 variant="h5"
-                className={classes.cardTitle}>
+                className={classes.cardTitle}
+                key={"srvceCardTitle" + ind}>
                 {card.title}
               </Typography>
-              <Typography variant="body1" className={classes.cardDesc}>{card.description}</Typography>
+              <Typography
+                variant="body1"
+                className={classes.cardDesc}
+                key={"srvceCardDesc" + ind}>
+                {card.description}
+              </Typography>
             </CardContent>
           </Card>
         </Grid>

@@ -46,6 +46,19 @@ const cardList = [
   },
 ];
 
+
+export const getStaticProps = async () => {
+  //get homepage data from strapi
+  const res = await fetch("http://localhost:1337/homepages/aboutCard");
+  const data = await res.json();
+
+  console.log(data)
+
+  return {
+    props: {aboutCard},
+  };
+};
+
 const AboutCards = () => {
   const classes = aboutCardStyles();
   return (
@@ -62,17 +75,17 @@ const AboutCards = () => {
               <Avatar
                 className={classes.cardImage}
                 src={card.headImage.src}
-                alt={card.headImage.alt}></Avatar>
+                alt={card.headImage.alt} key="{card.headImage.src}"></Avatar>
               <Typography
                 align="center"
                 variant="h5"
-                className={classes.cardTitle}>
+                className={classes.cardTitle} key="{card.title}">
                 {card.title}
               </Typography>
               <Typography
                 variant="body1"
                 align="center"
-                className={classes.cardDesc}>
+                className={classes.cardDesc} key="{card.description}">
                 {card.description}
               </Typography>
             </CardContent>
