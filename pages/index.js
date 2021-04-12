@@ -10,17 +10,6 @@ import {
   Grid,
 } from "@material-ui/core/";
 
-export const getStaticProps = async () => {
-  //get homepage data from strapi
-  const res = await fetch("http://localhost:1337/homepages");
-  const data = await res.json();
-
-  console.log(data)
-
-  return {
-    props: {homepages},
-  };
-};
 
 const useStyles = makeStyles((theme) => ({
   root: {
