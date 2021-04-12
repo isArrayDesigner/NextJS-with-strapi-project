@@ -35,79 +35,65 @@ const Contact = () => {
     <Container className={classes.cardContainer} maxWidth="lg">
       <Grid
         container
-        justify="center"
+        justify="flex-start"
         alignItems="center"
         className={classes.services}>
-        <Grid item md={8} className={classes.titleContainer}>
+        <Grid item xs={12} md={8} className={classes.titleContainer}>
           <Typography variant="h4" className={classes.sectionTitle}>
             Our <strong>Offices</strong>
           </Typography>
         </Grid>
-        <Grid item md={4}></Grid>
       </Grid>
       <Grid
         container
-        justify="center"
+        direction="row"
+        justify="flex-start"
         alignItems="center"
-        className={classes.contactInfo}
-        md={8}>
-        <Grid container alignItems="flex-start" spacing={3} md>
-          <Grid item>
-            <img src="/images/location.png" />
-          </Grid>
-          <Grid item>
-            <Typography variant="h5" className={classes.contactCompany}>
-              Apptness Media Group
-            </Typography>
-            <Typography variant="body1" className={classes.address}>
-              399 NW 2nd Ave. Ste 100 <br /> Boca Raton, FL 33432
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          direction="column"
-          justify="space-around"
-          alignItems="center"
-          md>
+        className={classes.contactInfo}>
+        <Grid item xs={12} md={4}>
           <Grid
             container
-            item
-            md
-            xs={12}
-            spacing={3}
-            wrap="nowrap"
-            alignItems="center">
-            <Grid item>
-              <img src="/images/footer-call.png" />
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start">
+            <Grid item xs={2}>
+              <img src="/images/location.png" />
             </Grid>
-            <Grid item>
-              <Typography noWrap className={classes.phone}>
-                Phone : (561) 299-1053
+            <Grid item xs={10}>
+              <Typography variant="h5" className={classes.contactCompany}>
+                Apptness Media Group
               </Typography>
-            </Grid>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={12}
-            md
-            spacing={3}
-            wrap="nowrap"
-            alignItems="center">
-            <Grid item>
-              <img src="/images/email.png" />
-            </Grid>
-            <Grid>
-              <Typography variant="h5" className={classes.email}>
-                Email:
-                <Link href="mailto:support@apptness.io" target="_blank">
-                  support@apptness.io
-                </Link>
+              <Typography variant="body1" className={classes.address}>
+                399 NW 2nd Ave. Ste 100 <br /> Boca Raton, FL 33432
               </Typography>
             </Grid>
           </Grid>
         </Grid>
+        <Grid item xs={12} md={4}>
+            <Grid container direction="row" wrap="nowrap" alignItems="center">
+              <Grid item xs={2}>
+                <img src="/images/footer-call.png" />
+              </Grid>
+              <Grid item xs={10}>
+                <Typography noWrap className={classes.phone}>
+                  Phone : (561) 299-1053
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid container direction="row" wrap="nowrap" alignItems="center">
+              <Grid item xs={2}>
+                <img src="/images/email.png" />
+              </Grid>
+              <Grid item xs={10}>
+                <Typography variant="h5" className={classes.email}>
+                  Email:
+                  <Link href="mailto:support@apptness.io" target="_blank">
+                    support@apptness.io
+                  </Link>
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
       </Grid>
     </Container>
   );

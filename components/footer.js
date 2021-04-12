@@ -1,7 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
 import {
-  Button,
-  Toolbar,
   Container,
   Grid,
   Typography,
@@ -37,17 +35,15 @@ const Footer = () => {
       <Container maxWidth="lg">
         <Grid
           container
-          xs={12}
-          md
           direction="row"
           justify="space-between"
           alignItems="center">
-          <Grid xs={12} md>
+          <Grid item xs={12} md={6}>
             <Typography variant="subtitle1" className={classes.copyright}>
               © Apptness Media Group, 2016. All Rights Reserved.
             </Typography>
           </Grid>
-          <Grid xs={12} md align="right">
+          <Grid item xs={12} md={6} align="right">
             <Typography className={classes.contactLink}>
               <Link
                 className={classes.contactLink}

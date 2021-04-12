@@ -68,7 +68,7 @@ const Services = () => {
       </Grid>
       <Container className={classes.cardContainer} maxWidth="lg">
         <ServiceCards />
-        <Grid container justify="center" xs={12}>
+        <Grid container justify="center">
           <Button
             className={classes.srvBtnMargin}
             size="large"
