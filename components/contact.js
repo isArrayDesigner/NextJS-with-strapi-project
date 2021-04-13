@@ -29,7 +29,7 @@ const contactStyles = makeStyles((theme) => ({
   },
 }));
 
-const Contact = () => {
+const Contact = (props) => {
   const classes = contactStyles();
   return (
     <Container className={classes.cardContainer} maxWidth="lg">
@@ -40,7 +40,7 @@ const Contact = () => {
         className={classes.services}>
         <Grid item xs={12} md={8} className={classes.titleContainer}>
           <Typography variant="h4" className={classes.sectionTitle}>
-            Our <strong>Offices</strong>
+            {props.contactSectionTitle}
           </Typography>
         </Grid>
       </Grid>
@@ -57,14 +57,14 @@ const Contact = () => {
             justify="space-between"
             alignItems="flex-start">
             <Grid item xs={2}>
-              <img src="/images/location.png" />
+              <img src={props.addressIcon} />
             </Grid>
             <Grid item xs={10}>
               <Typography variant="h5" className={classes.contactCompany}>
-                Apptness Media Group
+              {props.contactCompanyName}
               </Typography>
               <Typography variant="body1" className={classes.address}>
-                399 NW 2nd Ave. Ste 100 <br /> Boca Raton, FL 33432
+                {props.address}
               </Typography>
             </Grid>
           </Grid>
@@ -72,23 +72,23 @@ const Contact = () => {
         <Grid item xs={12} md={4}>
             <Grid container direction="row" wrap="nowrap" alignItems="center">
               <Grid item xs={2}>
-                <img src="/images/footer-call.png" />
+                <img src={props.phoneIcon} />
               </Grid>
               <Grid item xs={10}>
                 <Typography noWrap className={classes.phone}>
-                  Phone : (561) 299-1053
+                  Phone : {props.phoneNumber}
                 </Typography>
               </Grid>
             </Grid>
             <Grid container direction="row" wrap="nowrap" alignItems="center">
               <Grid item xs={2}>
-                <img src="/images/email.png" />
+                <img src={props.emailIcon} />
               </Grid>
               <Grid item xs={10}>
                 <Typography variant="h5" className={classes.email}>
                   Email:
-                  <Link href="mailto:support@apptness.io" target="_blank">
-                    support@apptness.io
+                  <Link href={"mailto:" + props.emailAddressUrl} target="_blank">
+                    {props.emailAddress}
                   </Link>
                 </Typography>
               </Grid>

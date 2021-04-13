@@ -48,94 +48,37 @@ const srvcCardStyles = makeStyles((theme) => ({
   },
 }));
 
-const cardList = [
-  {
-    title: [<strong>Digital</strong>, " ", "Strategy"],
-    description:
-      "As specialists in digital advertising we’ve spent years helping agencies, brands, professional services and many others find the right digital strategy for their market and target audience. Let us work with you to implement the right processes to effectively grow your business.",
-    headImage: { src: "/images/digital-strategy.png", alt: "digital strategy" },
-  },
-  {
-    title: "PUBLISHERS",
-    description: [
-      <ul className={styles.cardDescUl}>
-        <li>Receive maximum monetization for quality traffic.</li>
-        <li>Leverage our unique data sources to drive superiormonetization.</li>
-        <li>
-          Work with all standard payout models, CPA, CPL, CPC, CPM,rev-share.
-        </li>
-      </ul>,
-    ],
-    headImage: { src: "/images/publishers.png", alt: "publisers icon" },
-  },
-  {
-    title: "ADVERTISER",
-    description: [
-      <ul className={styles.cardDescUl}>
-        <li>
-          Data driven targeting allows you to access the right consumer at the
-          right time at scale.
-        </li>
-        <li>Display, email, contextual, search inventory available.</li>
-        <li>
-          Precise targeting &amp; data validation for email, phone, address.
-        </li>
-      </ul>,
-    ],
-    headImage: { src: "/images/advertiser.png", alt: "advertiser" },
-  },
-  {
-    title: [<strong>MOBILE</strong>, " ", "SOLUTIONS"],
-    description: [
-      <ul className={styles.cardDescUl}>
-        <li>Grow LTV and user interaction with dynamic messaging.</li>
-        <li>Convert mobile web traffic into long term monetization.</li>
-        <li>Maximize retention by engaging users with rich content.</li>
-      </ul>,
-    ],
-    headImage: { src: "/images/mobile-solutions.png", alt: "advertiser" },
-  },
-];
-
-const ServiceCards = () => {
+const ServiceCards = (props) => {
   const classes = srvcCardStyles();
   return (
-    <Grid
-      container
-      justify="center"
-      alignItems="center"
-      alignItems="stretch"
-      spacing={3}
-      key={"srvceCardGridWrap"}>
-      {cardList.map((card, ind) => (
-        <Grid item xs={12} md key={"srvceCardGrid" + ind}>
-          <Box className={classes.cardImageDiv} key={"srvceCardBox" + ind}>
+      //{cardList.map((card, ind) => (
+        <Grid item xs={12} md key="srvceCardGrid">
+          <Box className={classes.cardImageDiv} key="srvceCardBox">
             <Avatar
               className={classes.cardImage}
-              src={card.headImage.src}
-              alt={card.headImage.alt}
-              key={"srvceCardAvatar" + ind}></Avatar>
+              src={props.imageSrc}
+              alt={props.imageAlt}
+              key="srvceCardAvatar"></Avatar>
           </Box>
-          <Card className={classes.card} key={"srvceCardMain" + ind}>
-            <CardContent key={"srvceCardContent" + ind}>
+          <Card className={classes.card} key="srvceCardMain">
+            <CardContent key="srvceCardContent">
               <Typography
                 align="center"
                 variant="h5"
                 className={classes.cardTitle}
-                key={"srvceCardTitle" + ind}>
-                {card.title}
+                key="srvceCardTitle">
+                {props.title}
               </Typography>
               <Typography
                 variant="body1"
                 className={classes.cardDesc}
-                key={"srvceCardDesc" + ind}>
-                {card.description}
+                key="srvceCardDesc">
+                {props.description}
               </Typography>
             </CardContent>
           </Card>
         </Grid>
-      ))}
-    </Grid>
+      //))}
   );
 };
 

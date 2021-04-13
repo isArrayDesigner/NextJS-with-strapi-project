@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core/";
 
 const aboutStyles = makeStyles((theme) => ({
+
   sectionTitle2: {
     fontWeight: 300,
     fontSize: "1.75rem",
@@ -26,8 +27,8 @@ const aboutStyles = makeStyles((theme) => ({
     backgroundColor: "#f5f5f5",
   },
   cardContainer: {
-    marginTop:'3rem',
-  }
+    marginTop: "3rem",
+  },
 }));
 
 const About = () => {
