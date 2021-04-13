@@ -16,6 +16,10 @@ const navStyles = makeStyles((theme) => ({
   loginLink: {
     color: 'white',
   },
+  awesomeButton: {
+    marginLeft: '10px',
+  },
+
 }));
 
 const Nav = () => {
@@ -38,7 +42,7 @@ const Nav = () => {
           </Link>
         </Button>
         <Button
-          className={classes.btnMargin}
+          className={classes.awesomeButton}
           size="large"
           variant="contained"
           color="primary">
