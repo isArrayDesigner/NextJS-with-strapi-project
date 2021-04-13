@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/core/styles";
-import styles from "../styles/ServiceCards.module.css";
 import {
   Grid,
   Card,
