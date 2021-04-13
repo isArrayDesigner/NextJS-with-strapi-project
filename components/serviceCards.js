@@ -50,34 +50,34 @@ const srvcCardStyles = makeStyles((theme) => ({
 const ServiceCards = (props) => {
   const classes = srvcCardStyles();
   return (
-      //{cardList.map((card, ind) => (
-        <Grid item xs={12} md key="srvceCardGrid">
-          <Box className={classes.cardImageDiv} key="srvceCardBox">
-            <Avatar
-              className={classes.cardImage}
-              src={props.imageSrc}
-              alt={props.imageAlt}
-              key="srvceCardAvatar"></Avatar>
-          </Box>
-          <Card className={classes.card} key="srvceCardMain">
-            <CardContent key="srvceCardContent">
-              <Typography
-                align="center"
-                variant="h5"
-                className={classes.cardTitle}
-                key="srvceCardTitle">
-                {props.title}
-              </Typography>
-              <Typography
-                variant="body1"
-                className={classes.cardDesc}
-                key="srvceCardDesc">
-                {props.description}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      //))}
+    //{cardList.map((card, ind) => (
+    <Grid item xs={12} md key="srvceCardGrid">
+      <Box className={classes.cardImageDiv} key="srvceCardBox">
+        <Avatar
+          className={classes.cardImage}
+          src={props.imageSrc}
+          alt={props.imageAlt}
+          key="srvceCardAvatar"></Avatar>
+      </Box>
+      <Card className={classes.card} key="srvceCardMain">
+        <CardContent key="srvceCardContent">
+          <Typography
+            align="center"
+            variant="h5"
+            className={classes.cardTitle}
+            key="srvceCardTitle">
+            <div dangerouslySetInnerHTML={{ __html: props.title }}></div>
+          </Typography>
+          <Typography
+            variant="body1"
+            className={classes.cardDesc}
+            key="srvceCardDesc">
+            <div dangerouslySetInnerHTML={{ __html: props.description }}></div>
+          </Typography>
+        </CardContent>
+      </Card>
+    </Grid>
+    //))}
   );
 };
 

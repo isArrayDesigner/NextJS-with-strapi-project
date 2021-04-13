@@ -36,7 +36,11 @@ const Layout = ({
   phoneIcon,
   phoneNumber,
   emailIcon,
-  emailAddress
+  emailAddress,
+  logoUrl,
+  logoAlt,
+  loginLinkUrl,
+  loginButtonText
 }) => {
   const classes = useStyles();
   return (
@@ -51,7 +55,7 @@ const Layout = ({
           justify="center"
           alignItems="center"
           className={classes.mainBackground}>
-          <Nav />
+          <Nav logoUrl={logoUrl} logoAlt={logoAlt} loginLinkUrl={loginLinkUrl} loginButtonText={loginButtonText} />
           <Tagline mainTitle={taglineMainTitle} subtitle={taglineSubtitle} />
         </Grid>
         <main>{children}</main>

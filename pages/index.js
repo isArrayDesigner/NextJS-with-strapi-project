@@ -84,6 +84,10 @@ const apptnessWebsite = ({
   const classes = useStyles();
   return (
     <Layout
+      logoUrl={"https://strapi-t9rw.onrender.com" + homepageItems.logo.image.url}
+      logoAlt={homepageItems.logo.alt}
+      loginLinkUrl={homepageItems.loginButton.url}
+      loginButtonText={homepageItems.loginButton.buttonText}
       companyName={homepageItems.footer.copyrightCompany}
       copyrightYear={homepageItems.footer.copyrightYear}
       contactUrl={homepageItems.footer.contactUs.linkURL}

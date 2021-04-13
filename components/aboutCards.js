@@ -41,14 +41,14 @@ const AboutCards = (props) => {
             variant="h5"
             className={classes.cardTitle}
             key="cardtitle">
-            {props.title}
+            <div dangerouslySetInnerHTML={{ __html: props.title }}></div>
           </Typography>
           <Typography
             variant="body1"
             align="center"
             className={classes.cardDesc}
             key="carddesc">
-            {props.description}
+            <div dangerouslySetInnerHTML={{ __html: props.description }}></div>
           </Typography>
         </CardContent>
       </Card>
