@@ -28,7 +28,7 @@ const navStyles = makeStyles((theme) => ({
   },
 }));
 
-const Footer = () => {
+const Footer = (props) => {
   const classes = navStyles();
   return (
     <Grid container className={classes.containerBottom}>
@@ -40,16 +40,16 @@ const Footer = () => {
           alignItems="center">
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle1" className={classes.copyright}>
-              © Apptness Media Group, 2016. All Rights Reserved.
+              © {props.companyName}, {props.copyrightYear}. All Rights Reserved.
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} align="right">
             <Typography className={classes.contactLink}>
               <Link
                 className={classes.contactLink}
-                href="mailto:support@apptness.io"
+                href={props.contactUrl}
                 target="_blank">
-                Contact Us
+                {prop.contactText}
               </Link>
             </Typography>
           </Grid>
