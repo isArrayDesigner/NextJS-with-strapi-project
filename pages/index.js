@@ -9,8 +9,7 @@ import {
   Container,
   Button,
   Link,
-  Typography,
-  Card,
+  Typography
 } from "@material-ui/core/";
 
 const useStyles = makeStyles((theme) => ({
@@ -76,21 +75,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#f5f5f5",
   },
 }));
-
-function parseMarkdown(markdownText) {
-  const htmlText = markdownText
-    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-    .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
-    .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-    .replace(/\*(.*)\*/gim, '<i>$1</i>')
-    .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
-    .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
-    .replace(/\n$/gim, '<br />')
-
-  return htmlText.trim()
-}
 
 const apptnessWebsite = ({
   homepageItems,
@@ -244,7 +228,7 @@ export async function getStaticProps() {
     props: {
       homepageItems,
       serviceCardsList,
-      aboutCardsList,
+      aboutCardsList
     },
   };
 }
