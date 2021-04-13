@@ -196,8 +196,8 @@ const apptnessWebsite = ({
               {aboutCardsList.map((card, ind) => (
                 <AboutCards
                   key={card + ind}
-                  title={parseMarkdown(card.cardTitle)}
-                  description={parseMarkdown(card.cardBody)}
+                  title={card.cardTitle}
+                  description={card.cardBody}
                   imageSrc={
                     "https://strapi-t9rw.onrender.com" +
                     card.cardImage.image.url
