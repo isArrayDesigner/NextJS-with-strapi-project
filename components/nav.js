@@ -37,6 +37,15 @@ const Nav = () => {
             Login
           </Link>
         </Button>
+        <Button
+          className={classes.btnMargin}
+          size="large"
+          variant="contained"
+          color="primary">
+          <Link className={classes.loginLink} href="https://strapi-t9rw.onrender.com/admin" target="_blank">
+            I'm Awesome!
+          </Link>
+        </Button>
       </Toolbar>
     </Container>
   );

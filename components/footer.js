@@ -49,7 +49,7 @@ const Footer = (props) => {
                 className={classes.contactLink}
                 href={props.contactUrl}
                 target="_blank">
-                {prop.contactText}
+                {props.contactText}
               </Link>
             </Typography>
           </Grid>
