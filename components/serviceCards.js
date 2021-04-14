@@ -26,6 +26,12 @@ const srvcCardStyles = makeStyles((theme) => ({
     width: 88,
     position: "absolute",
     left: "35%",
+    [theme.breakpoints.down('sm')]: {
+      left: "45%",
+    },
+    [theme.breakpoints.down('xs')]: {
+      left: "38%",
+    },
   },
   cardImageDiv: {
     position: "relative",

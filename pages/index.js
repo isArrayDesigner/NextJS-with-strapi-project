@@ -62,12 +62,12 @@ const useStyles = makeStyles((theme) => ({
     borderBottomWidth: "2px",
     borderBottomStyle: "solid",
     borderBottomColor: theme.palette.secondary.main,
-    color: "#0e3441",
+    color: theme.palette.primary.main,
   },
   sectionSubtitle2: {
     marginTop: "1rem",
     fontWeight: 600,
-    color: "#0e3441",
+    color: theme.palette.primary.main,
   },
   about: {
     paddingTop: "3rem",

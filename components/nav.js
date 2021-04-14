@@ -1,9 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, Toolbar, Container, Link } from "@material-ui/core/";
+import { Button, Grid, Container, Link } from "@material-ui/core/";
 
 const navStyles = makeStyles((theme) => ({
   logoResize: {
-    width: "18%",
+    width: "40%",
   },
   btnMargin: {
     marginLeft: "auto",
@@ -22,23 +22,26 @@ const navStyles = makeStyles((theme) => ({
 
 }));
 
-const Nav = () => {
+const Nav = (props) => {
   const classes = navStyles();
   return (
     <Container className={classes.containerTop} maxWidth="lg">
-      <Toolbar>
-        <img
-          className={classes.logoResize}
-          src="/images/apptness_logo.png"
-          alt="apptness logo"
-        />
+      <Grid container direction="row" justify="space-between" alignItems="center">
+        <Grid item xs={12} md={6}>
+          <img
+            className={classes.logoResize}
+            src={props.logoUrl}
+            alt={props.logoAlt}
+          />
+        </Grid>
+        <Grid item xs={12} md={6} align="right">
         <Button
           className={classes.btnMargin}
           size="large"
           variant="contained"
           color="primary">
-          <Link className={classes.loginLink} href="http://apptness.leadspedia.net/affiliate" target="_blank">
-            Login
+          <Link className={classes.loginLink} href={props.loginLinkUrl} target="_blank">
+            {props.loginButtonText}
           </Link>
         </Button>
         <Button
@@ -50,7 +53,8 @@ const Nav = () => {
             I'm Awesome!
           </Link>
         </Button>
-      </Toolbar>
+        </Grid>
+      </Grid>
     </Container>
   );
 };

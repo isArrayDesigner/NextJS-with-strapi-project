@@ -5,10 +5,16 @@ const taglineStyles = makeStyles((theme) => ({
   mainTitle: {
     fontSize: "1.7rem",
     marginBottom: ".25rem",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: "1rem",
+    }
   },
   subtitle: {
     fontWeight: 600,
     fontSize: "1.8rem",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: "1rem",
+    }
   },
   taglineContainer: {
     marginTop: "8rem",
@@ -20,6 +26,24 @@ const taglineStyles = makeStyles((theme) => ({
     paddingRight: "5rem",
     paddingLeft: "5rem",
     backgroundColor: "rgba(255, 255, 255, 0.8)",
+    [theme.breakpoints.down('lg')]: {
+      marginLeft: "15rem",
+      marginRight: "15rem",
+      paddingRight: "8rem",
+      paddingLeft: "8rem",
+    },
+    [theme.breakpoints.down('md')]: {
+      marginLeft: "8rem",
+      marginRight: "8rem",
+      paddingRight: "8rem",
+      paddingLeft: "8rem",
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: "2rem",
+      marginRight: "2rem",
+      paddingRight: "2rem",
+      paddingLeft: "2rem",
+    }
   },
 }));
 
